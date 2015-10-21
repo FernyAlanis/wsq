@@ -1,0 +1,41 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+ 
+ 
+int main() {
+	vector <float> list;
+	string x;
+	int num;
+	int letra;
+ 
+	cout << "dame los números que gustes saber el promedio, total y desviación estandar " << endl;
+	cout << "Cuando termines de colocar los números favor de colocar el número -1 para finalizar" << endl;
+	cin >> num;
+ 
+	while (num != -1){
+		list.push_back(num);
+		cin >> num;
+	}
+	float k= 0;
+	for (int i=0; i<10; i++){
+    k= k + list[i];
+  }
+  float prom=k/list.size();
+  float m=0;
+  for (int i=0; i<list.size(); i++){
+    m = (pow((list[i]-prom), 2))+k;
+  }
+  m=sqrt(m/list.size());
+ 
+	cout << "Los Vectores son: " << endl;
+	for (int p=0; p<list.size(); p++)
+	cout << list[p] << " ";
+	 cout<< endl << "La suma es: " << k << endl;
+  cout << "El promedio es: " << prom << endl;
+  cout << "La desviación estander es: " << m << endl;
+ 
+	// your code goes here
+	return 0;
+}
